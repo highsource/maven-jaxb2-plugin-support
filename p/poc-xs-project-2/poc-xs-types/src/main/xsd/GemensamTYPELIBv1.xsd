@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://schema.kronofogden.se/typer/gemensamTYPELIB/v1"
+	version="1.1"
+	xmlns:gemtl="http://schema.kronofogden.se/typer/gemensamTYPELIB/v1">
+	<xsd:simpleType name="ManadTYPE">
+		<xsd:restriction base="xsd:int">
+			<xsd:maxInclusive value="12" />
+			<xsd:minInclusive value="1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ArTYPE">
+		<xsd:restriction base="xsd:int">
+			<xsd:maxInclusive value="2099" />
+			<xsd:minInclusive value="1900" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LandskodTYPE">
+		<xsd:annotation>
+			<xsd:documentation>&lt;p&gt;Giltig landskod enligt ISO 3166-1 alpha-2&lt;/p&gt;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ValutakodTYPE">
+		<xsd:annotation>
+			<xsd:documentation>&lt;p&gt;Giltig valutakod enligt ISO 4217&lt;/p&gt;
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="3" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DagTYPE">
+		<xsd:restriction base="xsd:int">
+			<xsd:maxInclusive value="31" />
+			<xsd:minInclusive value="1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="DatumEllerTillsvidareTYPE">
+		<xsd:choice>
+			<xsd:element name="Datum" type="xsd:date" />
+			<xsd:element name="Tillsvidare">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="TV" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:choice>
+	</xsd:complexType>
+</xsd:schema>

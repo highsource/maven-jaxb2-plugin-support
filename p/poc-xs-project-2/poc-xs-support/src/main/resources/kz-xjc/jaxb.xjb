@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" version="2.1"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<globalBindings>
+		<javaType name="org.joda.time.DateTime" xmlType="xs:dateTime"
+			parseMethod="se.kfm.xml.converters.XSDDateTimeToJodaDateTimeMarshaller.unmarshal"
+			printMethod="se.kfm.xml.converters.XSDDateTimeToJodaDateTimeMarshaller.marshal" />
+		<javaType name="org.joda.time.LocalDate" xmlType="xs:date"
+			parseMethod="se.kfm.xml.converters.XSDDateToJodaLocalDateMarshaller.unmarshal"
+			printMethod="se.kfm.xml.converters.XSDDateToJodaLocalDateMarshaller.marshal" />
+	</globalBindings>
+</bindings>

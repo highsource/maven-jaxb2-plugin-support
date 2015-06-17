@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://schema.kronofogden.se/typer/personTYPELIB/v1"
+	version="1.1" 
+	xmlns:gemtl="http://schema.kronofogden.se/typer/gemensamTYPELIB/v1"
+	xmlns:tns="http://schema.kronofogden.se/typer/personTYPELIB/v1">
+	<xsd:import namespace="http://schema.kronofogden.se/typer/gemensamTYPELIB/v1"
+		schemaLocation="GemensamTYPELIBv1.xsd" /> <!-- TODO -->
+	<xsd:complexType name="AdressTYPE">
+		<xsd:sequence>
+			<xsd:element maxOccurs="2" minOccurs="0" name="Postadress"
+				type="xsd:string" />
+			<xsd:element name="Postnummer" type="xsd:string" />
+			<xsd:element name="Postort" type="xsd:string" />
+			<xsd:element minOccurs="0" name="Landskod" type="gemtl:LandskodTYPE" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="PersonOrganisationsnummerTYPE">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="12" />
+			<xsd:pattern value="(1[6-9]|20)[0-9]{10}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TelefonnummerTYPE">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\+|0{1,2})[1-9][0-9]*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="EpostTYPE">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".+@.+\..+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FolkbokforingskodTYPE">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="6" />
+			<xsd:pattern value="[0-9]{6}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Vart ska kontaktuppgifter ligga? -->
+	<!-- Används i Sökande, Svarande, Person, Intressent. Varierar dock lite. -->
+	<xsd:complexType name="KontaktuppgifterTYPE">
+		<xsd:sequence>
+			<xsd:element name="Frandatum" type="xsd:date" minOccurs="0" />
+			<xsd:element name="Tilldatum" type="xsd:date" minOccurs="0" />
+			<xsd:choice>
+				<xsd:element name="Epost" type="tns:EpostTYPE" />
+				<xsd:element name="Telefon">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Telefontyp" type="tns:TelefontypTYPE" />
+							<xsd:element name="Telefonnummer" type="tns:TelefonnummerTYPE" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Bankuppgift">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Bankgiro" type="xsd:string"
+								minOccurs="0" />
+							<xsd:element name="Plusgiro" type="xsd:string"
+								minOccurs="0" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Adress" type="tns:AdressTYPE" />
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="TelefontypTYPE">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="MOBIL" />
+			<xsd:enumeration value="HEM" />
+			<xsd:enumeration value="ARBETE" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+</xsd:schema>

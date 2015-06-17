@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:FysiskPerson
+	xmlns="http://schema.kronofogden.se/referens/personREFERENS/v1"
+	xmlns:ns2="http://schema.kronofogden.se/instans/personINSTANS/v1">
+	<PersonOrganisationsnummer>197510231231</PersonOrganisationsnummer>
+	<Namn>Felix Hermann</Namn>
+	<Telefonnummer>0737514403</Telefonnummer>
+	<ns2:SkyddadePersonuppgifter>true</ns2:SkyddadePersonuppgifter>
+</ns2:FysiskPerson>

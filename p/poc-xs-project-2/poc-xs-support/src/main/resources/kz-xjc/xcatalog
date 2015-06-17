@@ -1,0 +1,2 @@
+-- Rewrite path to my own artifacts
+REWRITE_SYSTEM "http://www.kronofogden.se/kronofogden/typbibliotek/" ./"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://schema.kronofogden.se/referens/personREFERENS/v1"
+	version="1.1"
+	xmlns:tns="http://schema.kronofogden.se/referens/personREFERENS/v1"
+	xmlns:prstl="http://schema.kronofogden.se/typer/personTYPELIB/v1">
+	<xsd:import
+		namespace="http://schema.kronofogden.se/typer/personTYPELIB/v1"
+		schemaLocation="http://kfmit-utv-test.rsvc.se/schemapoc/kfm-xs-types/1.0.0/PersonTYPELIBv1.xsd" />
+
+  <!-- Exempel: Här definierar vi Personelementen (för referenser) -->
+  <xsd:element name="PersonOrganisationsnummer" type="prstl:PersonOrganisationsnummerTYPE" />
+  <xsd:element name="Namn" type="xsd:string" />
+  <xsd:element name="Adress" type="prstl:AdressTYPE" />
+  <xsd:element name="Telefonnummer" type="prstl:TelefonnummerTYPE" />
+</xsd:schema>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified"
+	targetNamespace="http://schema.kronofogden.se/instans/personINSTANS/v1"
+	version="1.1"
+	xmlns:tns="http://schema.kronofogden.se/instans/personINSTANS/v1"
+	xmlns:prsrf="http://schema.kronofogden.se/referens/personREFERENS/v1">
+	<xsd:import
+		namespace="http://schema.kronofogden.se/referens/personREFERENS/v1"
+		schemaLocation="http://kfmit-utv-test.rsvc.se/schemapoc/kfm-ks-reference/1.0.0/PersonREFERENSv1.xsd" />
+
+	<xsd:element name="FysiskPerson" type="tns:FysiskPersonTYPE"/>		
+	<xsd:complexType name="PersonTYPE">
+		<xsd:sequence>
+			<!-- Demonstrerar referenser på fält -->
+			<xsd:element ref="prsrf:PersonOrganisationsnummer"/>
+			<xsd:element ref="prsrf:Namn" maxOccurs="2" minOccurs="0" />
+  			<xsd:element ref="prsrf:Adress" minOccurs="0" />
+  			<xsd:element ref="prsrf:Telefonnummer" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="FysiskPersonTYPE">
+		<xsd:complexContent>
+			<xsd:extension base="tns:PersonTYPE">
+				<xsd:sequence>
+					<xsd:element name="SkyddadePersonuppgifter" type="xsd:boolean" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="JuridiskPersonTYPE">
+		<xsd:complexContent>
+			<xsd:extension base="tns:PersonTYPE" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="Persontyp">
+		<xsd:choice>
+			<xsd:element name="FysiskPerson" type="tns:FysiskPersonTYPE" />
+			<xsd:element name="JuridiskPerson" type="tns:JuridiskPersonTYPE" />
+		</xsd:choice>
+	</xsd:group>
+	<xsd:complexType name="FysiskPersonreferensTYPE">
+		<xsd:sequence>
+			<xsd:element ref="prsrf:PersonOrganisationsnummer" />
+			<xsd:element name="SkyddadePersonuppgifter" type="xsd:boolean" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="JuridiskPersonreferensTYPE">
+		<xsd:sequence>
+			<xsd:element ref="prsrf:PersonOrganisationsnummer" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:group name="Personreferenstyp">
+		<xsd:choice>
+			<xsd:element name="JuridiskPersonreferens" type="tns:JuridiskPersonreferensTYPE" />
+			<xsd:element name="FysiskPersonreferens" type="tns:FysiskPersonreferensTYPE" />
+		</xsd:choice>
+	</xsd:group>
+</xsd:schema>

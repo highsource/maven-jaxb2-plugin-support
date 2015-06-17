@@ -1,0 +1,1 @@
+REWRITE_SYSTEM "http://kfmit-utv-test.rsvc.se/schemapoc/kfm-xs-types/1.0.0/" "maven:se.poc.kz.schema:poc-xs-types!/"
