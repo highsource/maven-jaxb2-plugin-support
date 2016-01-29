@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://GH83/intf" xmlns:common="http://GH83/types" 
+	targetNamespace="http://GH83/intf" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://GH83/types" schemaLocation="../types/CommonV3.xsd"/>
+	<xs:element name="testElement" type="TestType"/>
+	<xs:complexType name="TestType">
+		<xs:sequence>
+			<xs:element name="foo" type="common:FooType" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
