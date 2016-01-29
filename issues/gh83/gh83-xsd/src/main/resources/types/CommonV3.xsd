@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://GH83/types" 
+	targetNamespace="http://GH83/types" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xsd:simpleType name="FooType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FOO"/>
+			<xsd:enumeration value="BAR"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
