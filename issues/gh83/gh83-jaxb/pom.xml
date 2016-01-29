@@ -10,6 +10,16 @@
 
 	<artifactId>gh83-jaxb</artifactId>
 
+	<dependencyManagement>
+	<dependencies>
+	<dependency>
+		<groupId>gh83</groupId>
+		<artifactId>gh83-xsd</artifactId>
+		<version>${project.version}</version>
+	</dependency>
+	</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -22,15 +32,29 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<schemas>
-								<schema>
+							<strict>false</strict>
+							<catalogs>
+								<catalog>
 									<dependencyResource>
 										<groupId>gh83</groupId>
 										<artifactId>gh83-xsd</artifactId>
+										<resource>catalog.cat</resource>
 										<version>${project.version}</version>
-										<resource>intf/GH83.xsd</resource>
 									</dependencyResource>
+								</catalog>
+							</catalogs>
+							<schemas>
+								<schema>
+									<url>http://foo.bar/intf/GH83.xsd</url>
 								</schema>
+								<!--schema>
+									<dependencyResource>
+										<groupId>gh83</groupId>
+										<artifactId>gh83-xsd</artifactId>
+										<resource>intf/GH83.xsd</resource>
+										<version>${project.version}</version>
+									</dependencyResource>
+								</schema-->
 							</schemas>
 							<generateDirectory>target/generated-sources/jaxb</generateDirectory>
 						</configuration>
