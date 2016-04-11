@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings version="1.0" 
+    xmlns="http://java.sun.com/xml/ns/jaxb" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <bindings schemaLocation="./spring-integration-4.2.xsd">
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-integration-model/src/main/resources/spring-integration-4.2.xsd; 
+            lineNumber: 911; columnNumber: 20; cos-nonambig: "http://www.springframework.org/schema/integration":poller and "http://www.springframework.org/schema/integration":poller (or elements from their substitution group) violate "Unique Particle Attribution". During validation against this schema, ambiguity would be created for those two particles.
+        
+            THIS ERROR FIXED DIRECTLY IN SCHEMA, MORE LIKELY THIS IS A BUG IN SCHEMA!
+            line number 922 changed from
+                <xsd:choice minOccurs="0" maxOccurs="1" >
+            to
+                <xsd:choice minOccurs="1" maxOccurs="1" >
+        -->
+        
+        
+        
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-integration-model/src/main/resources/spring-integration-4.2.xsd; 
+            lineNumber: 1574; columnNumber: 91; Property "Expression" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:complexType[@name='delayer-type']/xsd:choice/xsd:element[@name='expression']">
+            <property name="expressionElement" />
+        </bindings>
+
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-integration-model/src/main/resources/spring-integration-4.2.xsd; 
+            lineNumber: 2260; columnNumber: 66; Property "Expression" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:complexType[@name='referenceOrValueHeaderType']/xsd:complexContent/xsd:extension/xsd:choice/xsd:element[@name='expression']">
+            <property name="expressionElement" />
+        </bindings>
+        
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-integration-model/src/main/resources/spring-integration-4.2.xsd; 
+            lineNumber: 1824; columnNumber: 24; Complex type and its child element share the same name "Chain". Use a class customization to resolve this conflict.
+        -->
+        <bindings node="//xsd:group[@name='chain-elements-group']/xsd:sequence/xsd:choice/xsd:element[@name='chain']/xsd:complexType">
+            <class name="ChainElement"/>
+        </bindings>
+    </bindings>
+</bindings>

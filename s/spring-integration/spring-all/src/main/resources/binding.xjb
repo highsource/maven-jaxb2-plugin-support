@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+      xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      version="2.1">
+    <bindings schemaLocation="../resources/spring-beans-4.2.xsd">
+        <bindings node="//xsd:element[@name='constructor-arg']/xsd:complexType/xsd:sequence/xsd:choice/xsd:element[@ref='ref']">
+            <property name="refAttribute" />
+        </bindings>
+        <bindings node="//xsd:element[@name='constructor-arg']/xsd:complexType/xsd:sequence/xsd:choice/xsd:element[@ref='value']">
+            <property name="valueAttribute" />
+        </bindings>
+
+        <bindings node="//xsd:complexType[@name='propertyType']/xsd:sequence/xsd:choice/xsd:element[@ref='ref']">
+            <property name="refAttribute" />
+        </bindings>
+        <bindings node="//xsd:complexType[@name='propertyType']/xsd:sequence/xsd:choice/xsd:element[@ref='value']">
+            <property name="valueAttribute" />
+        </bindings>
+
+        <bindings node="//xsd:complexType[@name='entryType']/xsd:sequence/xsd:element[@ref='key']">
+            <property name="keyAttribute" />
+        </bindings>    
+    </bindings>
+
+    <bindings schemaLocation="../resources/spring-integration-4.2.xsd">
+        <bindings node="//xsd:complexType[@name='delayer-type']/xsd:choice/xsd:element[@name='expression']">
+            <property name="expressionElement" />
+        </bindings>
+
+        <bindings node="//xsd:complexType[@name='referenceOrValueHeaderType']/xsd:complexContent/xsd:extension/xsd:choice/xsd:element[@name='expression']">
+            <property name="expressionElement" />
+        </bindings>
+        
+        <bindings node="//xsd:group[@name='chain-elements-group']/xsd:sequence/xsd:choice/xsd:element[@name='chain']/xsd:complexType">
+            <class name="ChainElement"/>
+        </bindings>
+    </bindings>
+</bindings>
