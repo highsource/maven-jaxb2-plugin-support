@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- 
+        This element explisitly sets schemaLocation for
+        <xsd:import namespace="http://www.springframework.org/schema/beans" />
+    -->
+    <public publicId="http://www.springframework.org/schema/beans" 
+            uri="maven:jaxb.bug.npe:spring-beans-model:jar::!/spring-beans-4.2.xsd"/>
+</catalog>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+      xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      version="2.1">
+    <bindings schemaLocation="./spring-beans-4.2.xsd">
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-beans-model/src/main/resources/spring-beans-4.2.xsd; 
+            lineNumber: 582; columnNumber: 30; Property "Ref" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:element[@name='constructor-arg']/xsd:complexType/xsd:sequence/xsd:choice/xsd:element[@ref='ref']">
+            <property name="refAttribute" />
+        </bindings>
+        
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-beans-model/src/main/resources/spring-beans-4.2.xsd; 
+            lineNumber: 584; columnNumber: 32; Property "Value" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:element[@name='constructor-arg']/xsd:complexType/xsd:sequence/xsd:choice/xsd:element[@ref='value']">
+            <property name="valueAttribute" />
+        </bindings>
+
+
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-beans-model/src/main/resources/spring-beans-4.2.xsd; 
+            lineNumber: 1052; columnNumber: 29; Property "Ref" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:complexType[@name='propertyType']/xsd:sequence/xsd:choice/xsd:element[@ref='ref']">
+            <property name="refAttribute" />
+        </bindings>
+        
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-beans-model/src/main/resources/spring-beans-4.2.xsd; 
+            lineNumber: 1054; columnNumber: 31; Property "Value" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:complexType[@name='propertyType']/xsd:sequence/xsd:choice/xsd:element[@ref='value']">
+            <property name="valueAttribute" />
+        </bindings>
+
+
+        <!--
+            systemId: file:/E:/Repos/Debessmann/spring-model/spring-beans-model/src/main/resources/spring-beans-4.2.xsd; 
+            lineNumber: 1135; columnNumber: 42; Property "Key" is already defined. Use &lt;jaxb:property> to resolve this conflict.
+        -->
+        <bindings node="//xsd:complexType[@name='entryType']/xsd:sequence/xsd:element[@ref='key']">
+            <property name="keyAttribute" />
+        </bindings>    
+    </bindings>
+</bindings>
