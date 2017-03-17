@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><?xml-stylesheet type="text/xsl" href="?style"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://bird.kartaca.com/xmlschema/admin/common" xmlns:sch1="http://bird.kartaca.com/xmlschema/admin/delivery" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bird.kartaca.com/xmlschema/admin/delivery" targetNamespace="http://bird.kartaca.com/xmlschema/admin/delivery">
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:com="http://bird.kartaca.com/xmlschema/admin/common" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" attributeFormDefault="qualified" elementFormDefault="qualified" jxb:version="2.1" targetNamespace="http://bird.kartaca.com/xmlschema/admin/common"><complexType name="EmptyContent"><complexContent><restriction base="anyType"/></complexContent></complexType><simpleType name="NotEmptyDurationText"><restriction base="duration"><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="CopyrightYearType"><restriction base="int"><minInclusive value="2014"/><maxExclusive value="2051"/></restriction></simpleType><simpleType name="Hour"><restriction base="int"><minInclusive value="0"/><maxExclusive value="24"/></restriction></simpleType><simpleType name="NotEmptyPeriodText"><restriction base="duration"><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="TrimmedEmail255"><restriction base="string"><whiteSpace value="collapse"/><pattern value="([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])"/><minLength value="0"/><maxLength value="255"/></restriction></simpleType><simpleType name="NotEmptyEmail255"><restriction base="string"><whiteSpace value="collapse"/><pattern value="([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])"/><minLength value="5"/><maxLength value="255"/></restriction></simpleType><simpleType name="TrimmedUrl255"><restriction base="anyURI"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="255"/></restriction></simpleType><simpleType name="NotEmptyUrl255"><restriction base="anyURI"><whiteSpace value="collapse"/><minLength value="14"/><maxLength value="255"/></restriction></simpleType><simpleType name="HtmlTextTitle"><restriction base="string"><minLength value="0"/><maxLength value="255"/></restriction></simpleType><simpleType name="ImageViewItem"><restriction base="anyURI"><minLength value="0"/><maxLength value="6990508"/></restriction></simpleType><complexType name="StreamAndTitleViewItem"><annotation><appinfo>
+            <jxb:class name="StreamAndTitleViewItemDto"/>
+        </appinfo></annotation><sequence><element name="title" type="string"/><element name="uri" type="com:ViewItem"/></sequence></complexType><simpleType name="ViewItem"><restriction base="anyURI"><minLength value="0"/><maxLength value="6990508"/></restriction></simpleType><simpleType name="HtmlTextContent"><restriction base="string"><minLength value="0"/><maxLength value="3000"/></restriction></simpleType><simpleType name="HtmlLongTextContent"><restriction base="string"><minLength value="0"/><maxLength value="500000"/></restriction></simpleType><simpleType name="NotEmptyBase64EncodedImageData5MiB"><restriction base="base64Binary"><minLength value="1"/><maxLength value="6827"/></restriction></simpleType><simpleType name="NumbersOnlyTrimmedText10"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="10"/><pattern value="[0-9]+"/></restriction></simpleType><simpleType name="TrimmedText24"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="24"/></restriction></simpleType><simpleType name="TrimmedText32"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="32"/></restriction></simpleType><simpleType name="TrimmedText64"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="64"/></restriction></simpleType><simpleType name="TrimmedText255"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="255"/></restriction></simpleType><simpleType name="TrimmedText512"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="512"/></restriction></simpleType><simpleType name="TrimmedText640"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="640"/></restriction></simpleType><simpleType name="TrimmedText4095"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="4095"/></restriction></simpleType><simpleType name="NotEmptyText16"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="16"/></restriction></simpleType><simpleType name="NotEmptyText8"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="8"/></restriction></simpleType><simpleType name="NotEmptyText24"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="24"/></restriction></simpleType><simpleType name="NotEmptyText32"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="32"/></restriction></simpleType><simpleType name="NotEmptyText64"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="64"/></restriction></simpleType><simpleType name="NotEmptyText80"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="80"/></restriction></simpleType><simpleType name="NotEmptyText255"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="255"/></restriction></simpleType><simpleType name="NotEmptyText256"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="256"/></restriction></simpleType><simpleType name="NotEmptyText4095"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="4095"/></restriction></simpleType><simpleType name="NotEmptyText511"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="511"/></restriction></simpleType><simpleType name="NotEmptyText510"><restriction base="string"><whiteSpace value="collapse"/><minLength value="1"/><maxLength value="510"/></restriction></simpleType><simpleType name="Msisdn"><restriction base="string"><whiteSpace value="collapse"/><pattern value="(5)\d{9}"/></restriction></simpleType><complexType name="ImageCollection"><annotation><appinfo>
+            <jxb:class name="ImageCollectionDto"/>
+        </appinfo></annotation><sequence><element maxOccurs="unbounded" minOccurs="0" name="images" type="com:ImageViewItem"/></sequence></complexType><complexType name="StringCollection"><annotation><appinfo>
+            <jxb:class name="StringCollectionDto"/>
+        </appinfo></annotation><sequence><element maxOccurs="unbounded" minOccurs="0" name="texts" type="string"/></sequence></complexType><complexType name="LongList"><sequence><element maxOccurs="unbounded" name="elements" type="long"/></sequence></complexType><complexType name="StreamAndTitleCollection"><annotation><appinfo>
+            <jxb:class name="StreamAndTitleCollectionDto"/>
+        </appinfo></annotation><sequence><element maxOccurs="unbounded" minOccurs="0" name="streamAndTitle" type="com:StreamAndTitleViewItem"/></sequence></complexType><complexType name="GeoLocation"><annotation><appinfo>
+            <jxb:class name="GeoLocationDto"/>
+        </appinfo></annotation><sequence><element name="latitude" type="decimal"/><element name="longitude" type="decimal"/></sequence></complexType><complexType name="Gender"><annotation><appinfo>
+            <jxb:class name="GenderDto"/>
+        </appinfo></annotation><sequence><element name="id" type="long"/><element name="name" type="string"/></sequence></complexType><complexType name="HtmlBasicPageViewItem"><annotation><appinfo>
+            <jxb:class name="HtmlBasicPageViewItemDto"/>
+        </appinfo></annotation><sequence><element name="title" type="com:HtmlTextTitle"/><element name="body" type="com:HtmlTextContent"/></sequence></complexType><simpleType name="DayOfWeek"><restriction base="string"><whiteSpace value="collapse"/><enumeration value="MONDAY"/><enumeration value="TUESDAY"/><enumeration value="WEDNESDAY"/><enumeration value="THURSDAY"/><enumeration value="FRIDAY"/><enumeration value="SATURDAY"/><enumeration value="SUNDAY"/></restriction></simpleType><simpleType name="EpochMillis"><restriction base="long"><minInclusive value="0"/></restriction></simpleType><simpleType name="RegistrationMethod"><restriction base="string"><whiteSpace value="collapse"/><enumeration value="MOBILE_APP"/><enumeration value="DEALER"/><enumeration value="WEB"/></restriction></simpleType><simpleType name="UserStatus"><restriction base="string"><whiteSpace value="collapse"/><enumeration value="CREATED"/><enumeration value="REGISTERED"/><enumeration value="BLOCKED"/><enumeration value="UNDER_INSPECTION"/></restriction></simpleType><simpleType name="UserStatusReasonEnum"><restriction base="string"><enumeration value="ACTIVE"/><enumeration value="COMPLAINT"/><enumeration value="FRAUD"/><enumeration value="PAYMENT"/><enumeration value="SUSPICIOUS"/><enumeration value="USER_PREFERENCE"/><enumeration value="OTHER"/></restriction></simpleType><simpleType name="DevicePlatform"><restriction base="string"><whiteSpace value="collapse"/><enumeration value="IOS"/><enumeration value="ANDROID"/></restriction></simpleType><complexType name="Interval"><annotation><appinfo>
+            <jxb:class name="IntervalDto"/>
+        </appinfo></annotation><sequence><element name="startTime" type="com:Hour"/><element name="active" type="boolean"/></sequence></complexType><complexType name="City"><annotation><appinfo>
+            <jxb:class name="CityDto"/>
+        </appinfo></annotation><sequence><element name="id" type="long"/><element name="name" type="com:NotEmptyText32"/></sequence></complexType><complexType name="District"><annotation><appinfo>
+            <jxb:class name="DistrictDto"/>
+        </appinfo></annotation><sequence><element name="id" type="long"/><element name="name" type="com:NotEmptyText32"/><element name="cityId" type="long"/></sequence></complexType><simpleType name="BigDecimal"><restriction base="decimal"><fractionDigits value="30"/><minInclusive value="0.000000000000000000000000000000"/></restriction></simpleType><simpleType name="AppMessageLinkType"><restriction base="string"><enumeration value="WALL"/><enumeration value="COIN_GAIN_VIDEO"/><enumeration value="COIN_MAIN_PAGE"/><enumeration value="COIN_HISTORY_PAGE_WEEKLY"/><enumeration value="COIN_HISTORY_PAGE_MONTHLY"/><enumeration value="COIN_HISTORY_PAGE_HALF_YEAR"/><enumeration value="QRCODE_IDENTIFIER_PAGE"/><enumeration value="LOYALTY_CARD_MAIN_PAGE"/><enumeration value="LOYALTY_CARD_DETAIL_PAGE"/><enumeration value="PROFILE_PAGE"/><enumeration value="NOTIFICATIONS_PAGE"/><enumeration value="ORDERS"/><enumeration value="PROFILE_EDIT_PAGE"/><enumeration value="SURVEY_PAGE"/><enumeration value="SETTINGS_PAGE"/><enumeration value="PERMISSIONS_PAGE"/><enumeration value="ABOUT_PAGE"/><enumeration value="AGREEMENT_PAGE"/><enumeration value="PRIVACY_POLICY_PAGE"/><enumeration value="HELP_PAGE"/><enumeration value="BRANDS_PAGE"/><enumeration value="CAMPAIGN_DETAIL_PAGE"/><enumeration value="FAVORITES_PAGE"/><enumeration value="CAMPAIGN_BANNER_DETAIL_PAGE"/><enumeration value="POPUP_MESSAGE"/><enumeration value="CLOSE"/><enumeration value="CAMPAIGN_FILTER_DETAIL_PAGE"/><enumeration value="INVITE_PAGE"/><enumeration value="BRAND_DETAIL_PAGE"/><enumeration value="NEARBY_STORES_PAGE"/><enumeration value="STORE_MAP_PAGE"/><enumeration value="SEARCH_PAGE"/><enumeration value="PAYMENT_PAGE"/><enumeration value="COIN_TRANSFER_GAIN_PAGE"/><enumeration value="PROMOTION_CODE_PAGE"/><enumeration value="CREDIT_CARD_MAIN_PAGE"/><enumeration value="DOWNLOAD_STORE"/><enumeration value="GIFT_COIN_GAIN"/><enumeration value="PRODUCT_FAVORITES_PAGE"/><enumeration value="PRODUCT_BARCODE_SEARCH_PAGE"/><enumeration value="PRODUCT_IMAGE_SEARCH_PAGE"/><enumeration value="PRODUCT_DETAIL_PAGE"/><enumeration value="PRODUCT_SEARCH_PAGE"/><enumeration value="CAMPAIGN_SEARCH_PAGE"/><enumeration value="FUEL_COIN_PAGE"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="CoinVariant"><restriction base="string"><whiteSpace value="collapse"/><enumeration value="DEFAULT"/><enumeration value="FUEL"/><enumeration value="GIFT"/></restriction></simpleType><complexType name="CoinInfo"><sequence><element name="amount" type="com:BigDecimal"/><element minOccurs="0" name="coinVariant" type="com:CoinVariant"/></sequence></complexType><simpleType name="validStoreRestrictionType"><restriction base="string"><enumeration value="ALL_STORES"/><enumeration value="ONLINE_STORES"/><enumeration value="OFFLINE_STORES"/><enumeration value="SPECIFIC_STORES"/></restriction></simpleType><complexType name="validStoreRestriction"><sequence><element name="merchantId" type="long"/><element name="restrictionType" type="com:validStoreRestrictionType"/><element maxOccurs="unbounded" minOccurs="0" name="specificStores" type="long"/><element default="true" minOccurs="0" name="visibleInCoins" type="boolean"/><element default="true" minOccurs="0" name="visibleInBrands" type="boolean"/><element default="false" name="campaignOwner" type="boolean"/></sequence></complexType><simpleType name="period"><restriction base="string"><whiteSpace value="collapse"/><minLength value="0"/><maxLength value="255"/></restriction></simpleType></schema>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:annox="http://annox.dev.java.net" xmlns:com="http://bird.kartaca.com/xmlschema/admin/common" xmlns:dlv="http://bird.kartaca.com/xmlschema/admin/delivery" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" attributeFormDefault="qualified" elementFormDefault="qualified" jaxb:extensionBindingPrefixes="annox" jxb:version="2.1" targetNamespace="http://bird.kartaca.com/xmlschema/admin/delivery"><import namespace="http://bird.kartaca.com/xmlschema/admin/common"/><simpleType name="Ttl"><restriction base="int"><minInclusive value="-1"/></restriction></simpleType><simpleType name="RecipientType"><restriction base="string"><enumeration value="MSISDN"/><enumeration value="USER_ID"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="PlaceholderType"><restriction base="string"><enumeration value="DEFAULT"/><enumeration value="DYNAMIC"/><enumeration value="BOTH"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="PushNotificationPermissionType"><restriction base="string"><enumeration value="CAMPAIGN_NOTIFICATION"/><enumeration value="LOCATION_NOTIFICATION"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="AppMessageBody"><restriction base="string"><minLength value="1"/><maxLength value="480"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="PushMessageBody"><restriction base="string"><minLength value="1"/><maxLength value="480"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="BatchId"><restriction base="string"><minLength value="1"/><maxLength value="200"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="DeliveryPriority"><restriction base="int"><minInclusive value="1"/><maxInclusive value="10"/></restriction></simpleType><simpleType name="SmsMessageBody"><restriction base="string"><minLength value="1"/><maxLength value="480"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="EmailMessageSubject"><restriction base="string"><minLength value="1"/><maxLength value="480"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="EmailMessageBody"><restriction base="string"><minLength value="1"/><maxLength value="16384"/><whiteSpace value="collapse"/></restriction></simpleType><simpleType name="IntegerIdentifier"><restriction base="long"><whiteSpace value="collapse"/><minInclusive value="-1"/><maxInclusive value="9223372036854775807"/></restriction></simpleType><simpleType name="EarnedCoinAmount"><restriction base="decimal"><whiteSpace value="collapse"/><minInclusive value="0"/><maxExclusive value="1000000"/><fractionDigits value="2"/></restriction></simpleType><simpleType name="PaymentAmount"><restriction base="decimal"><whiteSpace value="collapse"/><minExclusive value="0"/><maxExclusive value="1000000"/><fractionDigits value="2"/></restriction></simpleType><simpleType name="DeliveryRecipientAnswer"><restriction base="string"><enumeration value="ACCEPTED"/><enumeration value="INVALID_MSISDN"/><enumeration value="INVALID_USER_ID"/><enumeration value="MALFORMED_PLACEHOLDER_CONTENT"/><enumeration value="MALFORMED_VALUE"/><enumeration value="PLACEHOLDER_VALUE_ERRROR"/><enumeration value="PLACEHOLDER_CAMPAIGN_NOT_FOUND"/><enumeration value="PLACEHOLDER_LOYALTY_CARD_NOT_FOUND"/><enumeration value="PLACEHOLDER_CAMPAIGN_BANNER_NOT_FOUND"/><enumeration value="PLACEHOLDER_CAMPAIGN_FILTER_NOT_FOUND"/><enumeration value="PLACEHOLDER_MERCHANT_NOT_FOUND"/><enumeration value="IN_APP_TEMPLATE_NOT_FOUND"/><enumeration value="USER_NOT_FOUND"/><enumeration value="USER_NOT_PERMITTED"/><enumeration value="USER_HAS_NO_FAVORITES"/><enumeration value="MISSING_LINKED_CAMPAIGN_ID"/><enumeration value="MISSING_LINKED_LOYALTY_CARD_ID"/><enumeration value="MISSING_LINKED_CAMPAIGN_BANNER_ID"/><enumeration value="MISSING_LINKED_CAMPAIGN_FILTER_ID"/><enumeration value="MISSING_LINKED_BRAND_ID"/><enumeration value="MISSING_LINKED_STORE_ID"/><enumeration value="MISSING_EARNED_COIN_AMOUNT"/><enumeration value="MISSING_EARNED_COIN_MERCHANT_ID"/><enumeration value="MISSING_IN_APP_TEMPLATE_ID"/><enumeration value="MISSING_PRODUCT_ID"/><enumeration value="MISSING_SEARCH_TEXT"/><enumeration value="LINKED_CAMPAIGN_NOT_ACTIVE"/><enumeration value="LINKED_CAMPAIGN_NOT_VISIBLE"/><enumeration value="LINKED_CAMPAIGN_NOT_FOUND"/><enumeration value="EARNED_COIN_MERCHANT_NOT_FOUND"/><enumeration value="LINKED_LOYALTY_CARD_NOT_FOUND"/><enumeration value="LINKED_CAMPAIGN_BANNER_NOT_FOUND"/><enumeration value="LINKED_CAMPAIGN_BANNER_NOT_ACTIVE"/><enumeration value="LINKED_CAMPAIGN_BANNER_HAS_NO_CAMPAIGNS"/><enumeration value="LINKED_CAMPAIGN_BANNER_HAS_NO_URL"/><enumeration value="LINKED_CAMPAIGN_BANNER_HAS_NO_LINKED_ID"/><enumeration value="LINKED_CAMPAIGN_BANNER_HAS_NO_LINK_TYPE"/><enumeration value="LINKED_CAMPAIGN_BANNER_NOT_ASSIGNED"/><enumeration value="LINKED_CAMPAIGN_FILTER_NOT_FOUND"/><enumeration value="LINKED_CAMPAIGN_FILTER_HAS_NO_CAMPAIGNS"/><enumeration value="LINKED_CAMPAIGN_NOT_ASSIGNED"/><enumeration value="LINKED_LOYALTY_CARD_NOT_PAIRED"/><enumeration value="LINKED_LOYALTY_CARD_MULTIPLE_PAIRED"/><enumeration value="LINKED_BRAND_NOT_FOUND"/><enumeration value="LINKED_BRAND_NOT_VISIBLE"/><enumeration value="LINKED_BRAND_HAS_NO_CAMPAIGNS"/><enumeration value="LINKED_STORE_NOT_FOUND"/><enumeration value="MISSING_EMAIL_ADDRESS"/><enumeration value="MISSING_DEVICE_PLATFORM"/><enumeration value="MISSING_CLIENT_VERSION"/><enumeration value="UNSUPPORTED_DEVICE_PLATFORM"/><enumeration value="MISSING_NOTIFICATION_TOKEN"/><enumeration value="DELIVERY_TYPE_NOT_IMPLEMENTED_YET"/><enumeration value="RECIPIENT_TYPE_NOT_IMPLEMENTED_YET"/><enumeration value="UNSUPPORTED_LINK_TYPE"/><enumeration value="SENDING_CAMPAIGN_NOT_ACTIVE"/><enumeration value="SENDING_CAMPAIGN_NOT_FOUND"/><enumeration value="LINKED_CAMPAIGN_NOT_FOUND"/><enumeration value="SENDING_CAMPAIGN_NOT_TARGETED"/><enumeration value="SENDING_CAMPAIGN_ALREADY_SENT"/><enumeration value="ONLINE_STORE_NOT_SUPPORTED"/><enumeration value="MAX_ALLOWED_PRIORITY_REACHED"/><enumeration value="OUT_OF_TIME_RANGE"/><enumeration value="SENDING_BANNER_NOT_FOUND"/><enumeration value="SENDING_BANNER_NOT_ACTIVE"/><enumeration value="SENDING_BANNER_NOT_TARGETED"/><enumeration value="SENDING_BANNER_ALREADY_SENT"/><enumeration value="PRODUCT_NOT_FOUND"/><enumeration value="UNEXPECTED_ERROR"/><whiteSpace value="collapse"/></restriction></simpleType><complexType mixed="true" name="Recipient"><annotation><appinfo>
+            <jxb:class name="RecipientDto"/>
+        </appinfo></annotation><sequence><element maxOccurs="unbounded" minOccurs="0" name="placeholder" type="dlv:Placeholder"/></sequence><attribute default="USER_ID" name="type" type="dlv:RecipientType" use="optional"/><attribute name="transactionId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="linkedCampaignId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="linkedTemplateId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="linkedLoyaltyCardId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="linkedCampaignBannerId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="linkedCampaignFilterId" type="long" use="optional"/><attribute name="linkedBrandId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="linkedStoreId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="earnedCoinAmount" type="dlv:EarnedCoinAmount" use="optional"/><attribute name="earnedCoinMerchantId" type="dlv:IntegerIdentifier" use="optional"/><attribute name="earnedCoinCause" type="string" use="optional"/><attribute name="earnedCoinAction" type="string" use="optional"/><attribute name="paymentAmount" type="dlv:PaymentAmount" use="optional"/><attribute default="false" name="gift" type="boolean" use="optional"/><attribute default="false" name="markAsRead" type="boolean" use="optional"/><attribute name="readDate" type="dateTime" use="optional"/><attribute name="sentDate" type="dateTime" use="optional"/><attribute default="7776000" name="ttl" type="dlv:Ttl" use="optional"/><attribute default="false" name="displayOnStart" type="boolean" use="optional"/><attribute name="sound" type="string" use="optional"/><attribute name="link" type="com:AppMessageLinkType" use="optional"/><attribute name="messagePathId" type="string" use="optional"/><attribute name="searchText" type="string" use="optional"/><attribute name="productId" type="string" use="optional"/><attribute default="1" name="deliveryPriority" type="dlv:DeliveryPriority" use="optional"/><attribute name="expireMessage" type="string" use="optional"/></complexType><complexType name="Placeholder"><annotation><appinfo>
+            <jxb:class name="PlaceholderDto"/>
+            <annox:annotate>
+                @javax.xml.bind.annotation.XmlRootElement(namespace = "http://bird.kartaca.com/xmlschema/admin/delivery", name = "placeholder")
+            </annox:annotate>
+        </appinfo></annotation><sequence><element name="key" type="string"/><element name="value" type="string"/><element name="type" type="dlv:PlaceholderType"/></sequence></complexType><complexType name="DeliveryResponse"><annotation><appinfo>
+            <jxb:class name="DeliveryResponseDto"/>
+        </appinfo></annotation><simpleContent><extension base="string"><attribute name="status" type="dlv:DeliveryRecipientAnswer" use="required"/><attribute name="type" type="dlv:RecipientType" use="required"/></extension></simpleContent></complexType><complexType abstract="true" name="DeliveryItem"><annotation><appinfo>
+            <jxb:class name="DeliveryItemDto"/>
+        </appinfo></annotation></complexType><complexType name="Campaign"><annotation><appinfo>
+            <jxb:class name="CampaignDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:DeliveryItem"><sequence><element name="campaignId" type="dlv:IntegerIdentifier"/></sequence></extension></complexContent></complexType><complexType name="DeletedCampaign"><annotation><appinfo>
+            <jxb:class name="DeletedCampaignDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:DeliveryItem"><sequence><element minOccurs="0" name="campaignId" type="dlv:IntegerIdentifier"/></sequence></extension></complexContent></complexType><complexType name="Banner"><annotation><appinfo>
+            <jxb:class name="BannerDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:DeliveryItem"><sequence><element name="bannerId" type="dlv:IntegerIdentifier"/></sequence></extension></complexContent></complexType><complexType name="AppMessage"><annotation><appinfo>
+            <jxb:class name="AppMessageDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:DeliveryItem"><sequence><element name="body" type="dlv:AppMessageBody"/></sequence><attribute name="link" type="com:AppMessageLinkType" use="optional"/></extension></complexContent></complexType><complexType name="PushMessage"><annotation><appinfo>
+            <jxb:class name="PushMessageDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:AppMessage"><attribute default="CAMPAIGN_NOTIFICATION" name="checkPermission" type="dlv:PushNotificationPermissionType" use="optional"/><attribute name="batchId" type="dlv:BatchId" use="optional"/><attribute default="false" name="richPush" type="boolean" use="optional"/></extension></complexContent></complexType><complexType name="SmsMessage"><annotation><appinfo>
+            <jxb:class name="SmsMessageDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:DeliveryItem"><sequence><element name="body" type="dlv:SmsMessageBody"/></sequence></extension></complexContent></complexType><complexType name="EmailMessage"><annotation><appinfo>
+            <jxb:class name="EmailMessageDto"/>
+        </appinfo></annotation><complexContent><extension base="dlv:DeliveryItem"><sequence><element name="subject" type="dlv:EmailMessageSubject"/><element name="body" type="dlv:EmailMessageBody"/></sequence></extension></complexContent></complexType><element name="sendMessageRequest"><complexType><sequence><element name="message" type="dlv:DeliveryItem"/><element maxOccurs="1000" name="recipients" type="dlv:Recipient"/></sequence></complexType></element><element name="sendMessageResponse"><complexType><sequence><element maxOccurs="1000" name="recipients" type="dlv:DeliveryResponse"/></sequence></complexType></element><element name="sendCampaignRequest"><complexType><sequence><element name="campaign" type="dlv:Campaign"/><element maxOccurs="1000" name="recipients" type="dlv:Recipient"/></sequence></complexType></element><element name="sendCampaignResponse"><complexType><sequence><element maxOccurs="1000" name="recipients" type="dlv:DeliveryResponse"/></sequence></complexType></element><element name="removeCampaignRequest"><complexType><sequence><element name="campaign" type="dlv:DeletedCampaign"/><element maxOccurs="1000" name="recipients" type="dlv:Recipient"/></sequence></complexType></element><element name="removeCampaignResponse"><complexType><sequence><element maxOccurs="1000" name="recipients" type="dlv:DeliveryResponse"/></sequence></complexType></element><element name="sendBannerRequest"><complexType><sequence><element name="banner" type="dlv:Banner"/><element maxOccurs="1000" name="recipients" type="dlv:Recipient"/></sequence></complexType></element><element name="sendBannerResponse"><complexType><sequence><element maxOccurs="1000" name="recipients" type="dlv:DeliveryResponse"/></sequence></complexType></element><element name="exportTargettedRecipentsRequest"><complexType><sequence><choice><element name="campaignId" type="long"/><element name="bannerId" type="long"/></choice><element name="fileName" type="string"/><element name="message" type="string"/><element name="linkType" type="string"/><element name="ttl" type="long"/><element minOccurs="0" name="linkId" type="string"/><element name="notificationSound" type="string"/><element name="fieldDelimiter" type="string"/><element name="recordDelimiter" type="string"/><element name="isPermanent" type="boolean"/><element default="0" name="priority" type="long"/><element default="false" minOccurs="0" name="richPush" type="boolean"/></sequence></complexType></element><element name="assignCoinGameRequest"><complexType><sequence><element maxOccurs="1000" name="recipients" type="dlv:CoinGameRecipient"/></sequence></complexType></element><element name="assignCoinGameResponse"><complexType><sequence><element maxOccurs="unbounded" minOccurs="0" name="responses" type="dlv:AssignCoinGameResponse"/></sequence></complexType></element><complexType name="CoinGameRecipient"><annotation><appinfo>
+            <jxb:class name="CoinGameRecipientDto"/>
+        </appinfo></annotation><simpleContent><extension base="string"><attribute default="USER_ID" name="type" type="dlv:RecipientType" use="optional"/><attribute name="packageId" type="dlv:IntegerIdentifier"/><attribute default="7776000" name="ttl" type="dlv:Ttl" use="optional"/></extension></simpleContent></complexType><complexType name="AssignCoinGameResponse"><annotation><appinfo>
+            <jxb:class name="AssignCoinGameResponseDto"/>
+        </appinfo></annotation><sequence><element name="recipient" type="dlv:CoinGameRecipient"/><element name="status" type="dlv:CoinGameRecipientAnswer"/></sequence></complexType><simpleType name="CoinGameRecipientAnswer"><restriction base="string"><enumeration value="ACCEPTED"/><enumeration value="USER_NOT_FOUND"/><enumeration value="GAME_PACKAGE_NOT_FOUND"/></restriction></simpleType><element name="pickEligibleCampaignRequest"><complexType><sequence><element name="targetedUserId" type="long"/><element maxOccurs="1000" name="campaignAlternatives" type="long"/></sequence></complexType></element><element name="pickEligibleCampaignResponse"><complexType><sequence><element minOccurs="0" name="eligibleCampaignId" type="long"/><element minOccurs="0" name="messagePathId" type="string"/></sequence></complexType></element><element name="getEmailUnsubscribeLinkRequest"><complexType><sequence><element name="recipient" type="dlv:EmailUnsubscribeLinkRecipient"/></sequence></complexType></element><complexType name="EmailUnsubscribeLinkRecipient"><annotation><appinfo>
+            <jxb:class name="EmailUnsubscribeLinkRecipientDto"/>
+        </appinfo></annotation><simpleContent><extension base="string"><attribute default="USER_ID" name="type" type="dlv:RecipientType" use="optional"/></extension></simpleContent></complexType><element name="getEmailUnsubscribeLinkResponse"><complexType><sequence><element name="unsubscribeLink" type="string"/></sequence></complexType></element><element name="changeUserCoinTransferBlockStatusRequest"><complexType><sequence><element maxOccurs="1000" name="recipients" type="dlv:ChangeUserCoinTransferBlockRecipient"/></sequence></complexType></element><complexType name="ChangeUserCoinTransferBlockRecipient"><annotation><appinfo>
+            <jxb:class name="ChangeUserCoinTransferBlockRecipientDto"/>
+        </appinfo></annotation><simpleContent><extension base="string"><attribute default="USER_ID" name="type" type="dlv:RecipientType" use="optional"/><attribute name="status" type="boolean"/></extension></simpleContent></complexType><element name="changeUserCoinTransferBlockStatusResponse"><complexType><sequence><element maxOccurs="unbounded" minOccurs="0" name="responses" type="dlv:ChangeUserCoinTransferBlockStatusResponse"/></sequence></complexType></element><complexType name="ChangeUserCoinTransferBlockStatusResponse"><annotation><appinfo>
+            <jxb:class name="ChangeUserCoinTransferBlockStatusResponseDto"/>
+        </appinfo></annotation><sequence><element name="recipient" type="dlv:ChangeUserCoinTransferBlockRecipient"/><element name="status" type="dlv:ChangeUserCoinTransferBlockStatusAnswer"/></sequence></complexType><simpleType name="ChangeUserCoinTransferBlockStatusAnswer"><restriction base="string"><enumeration value="ACCEPTED"/><enumeration value="USER_NOT_FOUND"/><enumeration value="SAME_STATUS"/><enumeration value="UNEXPECTED_ERROR"/></restriction></simpleType><element name="setUserStatusAndHistoryRequest"><complexType><sequence><element name="recipient" type="dlv:UserStatusHistoryRecipient"/><element name="userStatusHistory" type="dlv:UserStatusHistory"/></sequence></complexType></element><element name="setUserStatusAndHistoryResponse"><complexType><sequence><element name="success" type="boolean"/><element name="error" type="dlv:UserStatusHistoryResponseErrorEnum"/></sequence></complexType></element><complexType name="UserStatusHistory"><annotation><appinfo>
+            <jxb:class name="UserStatusHistoryDto"/>
+        </appinfo></annotation><sequence><element name="status" type="dlv:UserStatusForHistory"/><element name="reason" type="com:UserStatusReasonEnum"/><element name="description" type="com:NotEmptyText510"/></sequence></complexType><complexType name="UserStatusHistoryRecipient"><annotation><appinfo>
+            <jxb:class name="UserStatusHistoryRecipientDto"/>
+        </appinfo></annotation><simpleContent><extension base="string"><attribute default="USER_ID" name="type" type="dlv:RecipientType" use="optional"/></extension></simpleContent></complexType><simpleType name="UserStatusHistoryResponseErrorEnum"><restriction base="string"><enumeration value="USER_NOT_FOUND"/><enumeration value="SAME_STATUS"/><enumeration value="UNEXPECTED_ERROR"/></restriction></simpleType><simpleType name="UserStatusForHistory"><restriction base="string"><whiteSpace value="collapse"/><enumeration value="REGISTERED"/><enumeration value="BLOCKED"/><enumeration value="UNDER_INSPECTION"/></restriction></simpleType></schema>
+    </wsdl:types>
+    <wsdl:message name="sendBannerRequest">
+        <wsdl:part element="tns:sendBannerRequest" name="sendBannerRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="changeUserCoinTransferBlockStatusResponse">
+        <wsdl:part element="tns:changeUserCoinTransferBlockStatusResponse" name="changeUserCoinTransferBlockStatusResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="assignCoinGameRequest">
+        <wsdl:part element="tns:assignCoinGameRequest" name="assignCoinGameRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pickEligibleCampaignResponse">
+        <wsdl:part element="tns:pickEligibleCampaignResponse" name="pickEligibleCampaignResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getEmailUnsubscribeLinkResponse">
+        <wsdl:part element="tns:getEmailUnsubscribeLinkResponse" name="getEmailUnsubscribeLinkResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="changeUserCoinTransferBlockStatusRequest">
+        <wsdl:part element="tns:changeUserCoinTransferBlockStatusRequest" name="changeUserCoinTransferBlockStatusRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="assignCoinGameResponse">
+        <wsdl:part element="tns:assignCoinGameResponse" name="assignCoinGameResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendMessageRequest">
+        <wsdl:part element="tns:sendMessageRequest" name="sendMessageRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendBannerResponse">
+        <wsdl:part element="tns:sendBannerResponse" name="sendBannerResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="pickEligibleCampaignRequest">
+        <wsdl:part element="tns:pickEligibleCampaignRequest" name="pickEligibleCampaignRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendCampaignRequest">
+        <wsdl:part element="tns:sendCampaignRequest" name="sendCampaignRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="removeCampaignRequest">
+        <wsdl:part element="tns:removeCampaignRequest" name="removeCampaignRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="exportTargettedRecipentsRequest">
+        <wsdl:part element="tns:exportTargettedRecipentsRequest" name="exportTargettedRecipentsRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendCampaignResponse">
+        <wsdl:part element="tns:sendCampaignResponse" name="sendCampaignResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="removeCampaignResponse">
+        <wsdl:part element="tns:removeCampaignResponse" name="removeCampaignResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="setUserStatusAndHistoryRequest">
+        <wsdl:part element="tns:setUserStatusAndHistoryRequest" name="setUserStatusAndHistoryRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="setUserStatusAndHistoryResponse">
+        <wsdl:part element="tns:setUserStatusAndHistoryResponse" name="setUserStatusAndHistoryResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendMessageResponse">
+        <wsdl:part element="tns:sendMessageResponse" name="sendMessageResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getEmailUnsubscribeLinkRequest">
+        <wsdl:part element="tns:getEmailUnsubscribeLinkRequest" name="getEmailUnsubscribeLinkRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="DeliverySoap">
+        <wsdl:operation name="sendBanner">
+            <wsdl:input message="tns:sendBannerRequest" name="sendBannerRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:sendBannerResponse" name="sendBannerResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeUserCoinTransferBlockStatus">
+            <wsdl:input message="tns:changeUserCoinTransferBlockStatusRequest" name="changeUserCoinTransferBlockStatusRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:changeUserCoinTransferBlockStatusResponse" name="changeUserCoinTransferBlockStatusResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="assignCoinGame">
+            <wsdl:input message="tns:assignCoinGameRequest" name="assignCoinGameRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:assignCoinGameResponse" name="assignCoinGameResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="pickEligibleCampaign">
+            <wsdl:input message="tns:pickEligibleCampaignRequest" name="pickEligibleCampaignRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:pickEligibleCampaignResponse" name="pickEligibleCampaignResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEmailUnsubscribeLink">
+            <wsdl:input message="tns:getEmailUnsubscribeLinkRequest" name="getEmailUnsubscribeLinkRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:getEmailUnsubscribeLinkResponse" name="getEmailUnsubscribeLinkResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendMessage">
+            <wsdl:input message="tns:sendMessageRequest" name="sendMessageRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:sendMessageResponse" name="sendMessageResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendCampaign">
+            <wsdl:input message="tns:sendCampaignRequest" name="sendCampaignRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:sendCampaignResponse" name="sendCampaignResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="removeCampaign">
+            <wsdl:input message="tns:removeCampaignRequest" name="removeCampaignRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:removeCampaignResponse" name="removeCampaignResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="exportTargettedRecipents">
+            <wsdl:input message="tns:exportTargettedRecipentsRequest" name="exportTargettedRecipentsRequest">
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="setUserStatusAndHistory">
+            <wsdl:input message="tns:setUserStatusAndHistoryRequest" name="setUserStatusAndHistoryRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:setUserStatusAndHistoryResponse" name="setUserStatusAndHistoryResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="DeliverySoapSoap11" type="tns:DeliverySoap">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sendBanner">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="sendBannerRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendBannerResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="changeUserCoinTransferBlockStatus">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="changeUserCoinTransferBlockStatusRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="changeUserCoinTransferBlockStatusResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="assignCoinGame">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="assignCoinGameRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="assignCoinGameResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="pickEligibleCampaign">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="pickEligibleCampaignRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="pickEligibleCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEmailUnsubscribeLink">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getEmailUnsubscribeLinkRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getEmailUnsubscribeLinkResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendMessage">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="sendMessageRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendMessageResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendCampaign">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="sendCampaignRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="removeCampaign">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="removeCampaignRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="removeCampaignResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="exportTargettedRecipents">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="exportTargettedRecipentsRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="setUserStatusAndHistory">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="setUserStatusAndHistoryRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="setUserStatusAndHistoryResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="DeliverySoapService">
+        <wsdl:port binding="tns:DeliverySoapSoap11" name="DeliverySoapSoap11">
+            <soap:address location="https://bird.staging.kartaca.com:443/bird-admin/soap/delivery"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
