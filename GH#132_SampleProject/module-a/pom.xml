@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>sample-project</groupId>
+		<artifactId>parent-pom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>sample-project</groupId>
+	<artifactId>module-a</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>sample-project</groupId>
+			<artifactId>module-b</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+        <!-- The build fails without this dependency (although it is a transitive dependency of module-b artifact
+             or without specifying the version in the matching dependencyResource below -->
+        <!--
+        <dependency>
+            <groupId>sample-project</groupId>
+            <artifactId>module-c</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        -->
+	</dependencies>
+
+	<build>
+        <plugins>
+			<plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+				<configuration>
+					<strict>false</strict>
+					<useDependenciesAsEpisodes>true</useDependenciesAsEpisodes>
+
+                    <bindingDirectory>src/main/resources/xjb</bindingDirectory>
+                    <schemaDirectory>src/main/resources/xsd/a</schemaDirectory>
+
+					<catalogs>
+						<catalog>
+							<dependencyResource>
+								<groupId>sample-project</groupId>
+								<artifactId>module-b</artifactId>
+								<resource>catalog/catalog.cat</resource>
+							</dependencyResource>
+						</catalog>
+						<catalog>
+							<dependencyResource>
+								<groupId>sample-project</groupId>
+								<artifactId>module-c</artifactId>
+								<!-- Does not work if removed or if the corresponding direct dependency is not declared -->
+                                <!--
+								<version>1.0.0</version>
+								-->
+								<resource>catalog/catalog.cat</resource>
+							</dependencyResource>
+						</catalog>
+					</catalogs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
