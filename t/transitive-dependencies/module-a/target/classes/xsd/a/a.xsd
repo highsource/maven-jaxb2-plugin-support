@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://some3rdnamespace.org/a"
+	xmlns:b="http://someothernamespace.org/b"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://some3rdnamespace.org/a"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.4.0">
+
+	<xsd:import namespace="http://someothernamespace.org/b"/>
+
+	<xsd:complexType name="ATestType">
+		<xsd:complexContent>
+			<xsd:extension base="b:BTestType">
+				<xsd:sequence>
+					<xsd:element name="a" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType></xsd:schema>

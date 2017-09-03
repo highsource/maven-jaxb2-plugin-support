@@ -10,7 +10,7 @@
 	<name>parent-pom</name>
 
 	<properties>
-		<maven.jaxb2.plugin.version>0.13.2</maven.jaxb2.plugin.version>
+		<maven.jaxb2.plugin.version>0.13.3-SNAPSHOT</maven.jaxb2.plugin.version>
 	</properties>
 
     <modules>
