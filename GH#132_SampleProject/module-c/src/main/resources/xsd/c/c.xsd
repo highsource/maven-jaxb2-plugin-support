@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://somenamespace.org/c"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://somenamespace.org/c"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1.4.0">
+
+	<xsd:complexType name="CTestType">
+        <xsd:sequence>
+            <xsd:element name="c" type="xsd:string"/>
+        </xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

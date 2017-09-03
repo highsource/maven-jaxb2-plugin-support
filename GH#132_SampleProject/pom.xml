@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>sample-project</groupId>
+	<artifactId>parent-pom</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>parent-pom</name>
+
+	<properties>
+		<maven.jaxb2.plugin.version>0.13.2</maven.jaxb2.plugin.version>
+	</properties>
+
+    <modules>
+        <!--
+            build of module-a is failing because of
+                "Failed to resolve systemId [maven:sample-project:module-c:jar::!/catalog/catalog.cat] as dependency resource".
+            I expected the version to be discovered by transitive dependency of module-b that module-a depends on
+        -->
+        <module>module-a</module>
+
+        <module>module-b</module> <!-- builds fine -->
+        <module>module-c</module> <!-- builds fine -->
+    </modules>
+
+	<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.jvnet.jaxb2.maven2</groupId>
+                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <version>${maven.jaxb2.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>xjc</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+	</build>
+</project>
