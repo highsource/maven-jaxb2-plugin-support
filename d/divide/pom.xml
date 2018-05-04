@@ -41,9 +41,9 @@
 							<dir>${project.build.directory}/xjc-c/META-INF</dir>
 							<outputDir>${project.build.directory}/xjc-c/META-INF</outputDir>
 							<includes>
-								<include>*.episode</include>
+								<include>sun-jaxb.episode</include>
 							</includes>
-							<stylesheet>src/main/xslt/setSchemaBindingsMapTrue.xslt</stylesheet>
+							<stylesheet>src/main/xslt/removeJaxbSchemaBindings.xslt</stylesheet>
 						</transformationSet>
 					</transformationSets>
 				</configuration>

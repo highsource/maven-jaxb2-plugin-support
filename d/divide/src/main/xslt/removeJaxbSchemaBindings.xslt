@@ -7,8 +7,4 @@
 		</xsl:copy>
 	</xsl:template>
 	<xsl:template match="jaxb:schemaBindings"/>
-	<xsl:template match="jaxb:schemaBindings/@map[.='false']">
-		<xsl:attribute name="map">true</xsl:attribute>
-	</xsl:template>
-
 </xsl:stylesheet>
