@@ -1,0 +1,17 @@
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:test"
+	xmlns:t="urn:test"
+	elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="c.xsd"/>
+
+	<xsd:element name="b" type="t:BType"/>
+
+	<xsd:complexType name="BType">
+		<xsd:sequence>
+			<xsd:element name="c" type="t:CType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

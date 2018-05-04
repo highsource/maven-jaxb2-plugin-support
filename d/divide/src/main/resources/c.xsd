@@ -1,0 +1,13 @@
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:test"
+	xmlns:t="urn:test"
+	elementFormDefault="qualified">
+
+	<xsd:complexType name="CType">
+		<xsd:sequence>
+			<xsd:element name="c" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>
