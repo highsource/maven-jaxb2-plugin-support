@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:c" elementFormDefault="qualified"
+	xmlns:c="urn:c">
+
+	<element name="c" type="c:CType"/>
+	<complexType name="CType">
+		<sequence>
+			<element name="c" type="string"/>
+		</sequence>
+	</complexType>
+</schema>
